@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tuhin Das | Medical Laboratory Technologist">
+  <title>Tuhin Das | Medical Laboratory Technologist</title>
+  <style>
+    :root{
+      --navy:#19356f;
+      --blue:#315aa5;
+      --light:#eef3fb;
+      --text:#1d2635;
+      --muted:#647086;
+      --white:#fff;
+      --border:#dce4f0;
+      --shadow:0 18px 50px rgba(25,53,111,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text); background:#f7f9fc; line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:20;
+      background:rgba(255,255,255,.9);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(220,228,240,.75);
+    }
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:.5px}
+    .logo span{color:#6d7f9f}
+    .navlinks{display:flex;gap:28px;align-items:center;font-size:.95rem;font-weight:600;color:#52617a}
+    .navlinks a:hover{color:var(--navy)}
+    .menu{display:none;border:0;background:none;font-size:1.6rem;color:var(--navy)}
+
+    .hero{padding:145px 0 85px;overflow:hidden;position:relative}
+    .hero:before{
+      content:"";position:absolute;width:480px;height:480px;border-radius:50%;
+      background:#e6edf9;right:-170px;top:20px;z-index:-1;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:800;font-size:.88rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:15px}
+    .eyebrow:before{content:"";width:32px;height:3px;background:var(--blue);border-radius:5px}
+    h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.03;letter-spacing:-2.5px;color:#162c5d;margin-bottom:18px}
+    h1 span{color:#5272ad}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:680px}
+    .buttons{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+    .btn{padding:13px 21px;border-radius:12px;font-weight:750;display:inline-flex;align-items:center;gap:9px;transition:.2s}
+    .btn-primary{background:var(--navy);color:white;box-shadow:0 9px 24px rgba(25,53,111,.22)}
+    .btn-primary:hover{transform:translateY(-2px);background:#10285c}
+    .btn-secondary{border:1px solid var(--border);background:white;color:var(--navy)}
+    .btn-secondary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+    .portrait-card{position:relative;display:flex;justify-content:center}
+    .portrait-ring{
+      width:min(330px,75vw);height:min(330px,75vw);border-radius:50%;padding:10px;
+      background:white;box-shadow:0 25px 70px rgba(25,53,111,.2);position:relative;
+    }
+    .portrait-ring:after{
+      content:"";position:absolute;inset:-18px;border:1px solid #cdd9ec;border-radius:50%;z-index:-1
+    }
+    .portrait-ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;object-position:center 22%}
+    .badge{
+      position:absolute;right:0;bottom:15px;background:white;border:1px solid var(--border);
+      border-radius:16px;padding:13px 16px;box-shadow:var(--shadow);font-weight:750;color:var(--navy)
+    }
+
+    section{padding:88px 0}
+    .section-head{margin-bottom:42px}
+    .section-head .small{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.8rem}
+    .section-head h2{font-size:2.1rem;color:#172f65;margin-top:5px}
+    .section-head p{color:var(--muted);max-width:700px;margin-top:8px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .card{background:white;border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(22,44,93,.05)}
+    .card h3{color:var(--navy);margin-bottom:10px;font-size:1.1rem}
+
+    .timeline{display:grid;gap:18px}
+    .timeline-item{display:grid;grid-template-columns:125px 1fr;gap:22px;padding:23px;background:white;border:1px solid var(--border);border-radius:16px}
+    .year{font-weight:850;color:var(--blue)}
+    .timeline-item h3{color:#213e7c;margin-bottom:3px}
+    .timeline-item p{color:var(--muted)}
+
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skill{background:white;border:1px solid var(--border);padding:20px;border-radius:16px}
+    .skill strong{display:block;color:var(--navy);margin-bottom:5px}
+    .skill span{color:var(--muted);font-size:.92rem}
+
+    .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .experience-card h3{color:var(--navy);font-size:1.2rem}
+    .experience-card .role{color:var(--blue);font-weight:700;margin:5px 0 14px}
+    .experience-card ul{padding-left:19px;color:var(--muted)}
+    .project{background:linear-gradient(135deg,#17346e,#315aa5);color:white;border:0}
+    .project h3,.project p{color:white}
+    .project p{opacity:.88;margin-top:10px}
+
+    .contact{background:#172f65;color:white}
+    .contact .section-head h2,.contact .section-head p,.contact .section-head .small{color:white}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .contact-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:22px;border-radius:16px}
+    .contact-item small{display:block;opacity:.65;margin-bottom:4px}
+    .contact-item a:hover{text-decoration:underline}
+
+    footer{padding:25px 0;text-align:center;color:#718096;background:#fff;font-size:.9rem}
+    .reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:800px){
+      .navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:18px 4%;border-bottom:1px solid var(--border);flex-direction:column;gap:16px}
+      .navlinks.open{display:flex}
+      .menu{display:block}
+      .hero{padding-top:120px}
+      .hero-grid,.about-grid,.experience-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-grid{gap:45px}
+      .portrait-card{order:-1}
+      .skills{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:500px){
+      h1{font-size:2.7rem}
+      section{padding:65px 0}
+      .skills{grid-template-columns:1fr}
+      .timeline-item{grid-template-columns:1fr;gap:4px}
+      .portrait-ring{width:270px;height:270px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">TUHIN <span>DAS</span></a>
+      <button class="menu" aria-label="Open menu">☰</button>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Medical Laboratory Technologist</div>
+        <h1>Hi, I'm <span>Tuhin Das.</span></h1>
+        <p>I am a Medical Laboratory Technologist with academic and clinical exposure across pathology, hematology, biochemistry, microbiology, histopathology and blood banking. I am focused on accurate laboratory work, quality practices and continuous learning.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contact">Get in touch ↗</a>
+          <a class="btn btn-secondary" href="#education">View my CV</a>
+        </div>
+      </div>
+      <div class="portrait-card reveal">
+        <div class="portrait-ring"><img src="profile.jpg" alt="Tuhin Das"></div>
+        <div class="badge">B.Sc. MLT · 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">About me</div>
+        <h2>Professional profile</h2>
+        <p>A clean snapshot of my background, interests and career direction.</p>
+      </div>
+      <div class="about-grid">
+        <div class="card reveal">
+          <h3>Career Objective</h3>
+          <p>To obtain a position as a Lab Technologist skilled in clinical diagnostics, laboratory procedures and quality control practices, while continuously improving professional knowledge and contributing to accurate patient diagnosis.</p>
+        </div>
+        <div class="card reveal">
+          <h3>What I bring</h3>
+          <p>Knowledge of core medical laboratory disciplines, specimen handling and processing, laboratory testing, microscopy and common laboratory equipment, combined with computer and data-entry skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">Academic journey</div>
+        <h2>Education & qualifications</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="year">2022–2025</div>
+          <div><h3>B.Sc. in Medical Laboratory Technology</h3><p>Sister Nivedita University · CGPA 7.84/10</p></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2022</div>
+          <div><h3>Higher Secondary</h3><p>WBCHSE · 76.4%</p></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2020</div>
+          <div><h3>Madhyamik Examination</h3><p>WBBSE · 65.14%</p></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2025</div>
+          <div><h3>Bachelor in Medical Laboratory Technology (BMLT)</h3><p>Sister Nivedita University</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">Core capabilities</div>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills">
+        <div class="skill reveal"><strong>Clinical Pathology</strong><span>Laboratory workflow and diagnostic fundamentals</span></div>
+        <div class="skill reveal"><strong>Hematology</strong><span>Routine hematology knowledge and testing</span></div>
+        <div class="skill reveal"><strong>Biochemistry</strong><span>Clinical biochemistry laboratory practices</span></div>
+        <div class="skill reveal"><strong>Microbiology</strong><span>Culture, staining and basic identification concepts</span></div>
+        <div class="skill reveal"><strong>Histopathology</strong><span>Specimen processing and laboratory fundamentals</span></div>
+        <div class="skill reveal"><strong>Blood Bank</strong><span>Blood banking and transfusion laboratory basics</span></div>
+        <div class="skill reveal"><strong>Laboratory Equipment</strong><span>Centrifuge, incubator and hot-air oven</span></div>
+        <div class="skill reveal"><strong>Computer Skills</strong><span>MS Word, Excel, PowerPoint, Tally and data entry</span></div>
+        <div class="skill reveal"><strong>Creative Skills</strong><span>Photoshop, Canva, poster and banner design, video editing</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">Clinical exposure</div>
+        <h2>Experience</h2>
+      </div>
+      <div class="experience-grid">
+        <div class="card experience-card reveal">
+          <h3>Techno Global Hospital Barrackpore</h3>
+          <div class="role">Clinical Experience</div>
+          <ul>
+            <li>Exposure to routine clinical laboratory workflow.</li>
+            <li>Sample collection, handling and processing.</li>
+            <li>Practical exposure across core laboratory departments.</li>
+          </ul>
+        </div>
+        <div class="card experience-card reveal">
+          <h3>R.G. Kar Medical College and Hospital</h3>
+          <div class="role">Internship</div>
+          <ul>
+            <li>Clinical laboratory internship experience.</li>
+            <li>Exposure to hospital laboratory procedures and diagnostic workflow.</li>
+            <li>Hands-on learning across medical laboratory disciplines.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">Research</div>
+        <h2>Featured project</h2>
+      </div>
+      <div class="card project reveal">
+        <h3>Role of AI in Disease Prediction</h3>
+        <p>Research paper exploring the role and potential applications of Artificial Intelligence in disease prediction and healthcare diagnostics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">Beyond the laboratory</div>
+        <h2>Languages & interests</h2>
+      </div>
+      <div class="about-grid">
+        <div class="card reveal">
+          <h3>Languages</h3>
+          <p>Bengali · Fluent<br>Hindi · Fluent<br>English · Professional proficiency<br>German · Basic</p>
+        </div>
+        <div class="card reveal">
+          <h3>Creative interests</h3>
+          <p>Drawing · Sketching · Editing<br><br>Graphic design, poster making, banner design, video editing and social media content creation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="small">Contact</div>
+        <h2>Let's connect</h2>
+        <p>If you're looking for a motivated Medical Laboratory Technologist, feel free to get in touch.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item reveal"><small>Phone</small><a href="tel:+919339481260">+91 9339481260</a></div>
+        <div class="contact-item reveal"><small>Email</small><a href="mailto:Tuhindas2434@gmail.com">Tuhindas2434@gmail.com</a></div>
+        <div class="contact-item reveal"><small>Website</small><a href="https://www.tuhindas.weebly.com" target="_blank" rel="noopener">tuhindas.weebly.com</a></div>
+        <div class="contact-item reveal"><small>Location</small><span>Tantisal, Hooghly, West Bengal, India</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Tuhin Das · Medical Laboratory Technologist
+</footer>
+
+<script>
+  const menu = document.querySelector('.menu');
+  const links = document.querySelector('.navlinks');
+  menu.addEventListener('click', () => links.classList.toggle('open'));
+  document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, {threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
