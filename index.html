@@ -125,6 +125,21 @@
       .portrait-ring{width:270px;height:270px}
     }
   </style>
+  .socials{
+  display:flex;justify-content:center;gap:16px;
+  margin-bottom:14px;
+}
+.socials a{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--light);color:var(--navy);
+  border:1px solid var(--border);
+  transition:.2s;
+}
+.socials a:hover{
+  background:var(--navy);color:white;transform:translateY(-3px);
+}
+.socials svg{width:18px;height:18px;fill:currentColor}
 </head>
 <body>
 <header>
