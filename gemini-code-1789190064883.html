@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Projects Showcase — Tuhin Das</title>
+    <meta name="description" content="Curated portfolio of creative designs, posters, banners, YouTube thumbnails, promotional graphics, and photography by Tuhin Das.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons for Socials and UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEME CONFIGURATION
+           ========================================================================== */
+        :root {
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Light Theme Defaults */
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.75);
+            --bg-card: #ffffff;
+            --border-color: rgba(226, 232, 240, 0.8);
+            --border-hover: rgba(59, 130, 246, 0.4);
+            
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            
+            --accent-primary: #2563eb;
+            --accent-cyan: #06b6d4;
+            --accent-gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            --accent-glow: rgba(37, 99, 235, 0.15);
+            
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 10px 30px -10px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.12);
+            
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-full: 9999px;
+
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-base: #090d16;
+            --bg-surface: #111827;
+            --bg-glass: rgba(17, 24, 39, 0.75);
+            --bg-card: #161e2e;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(6, 182, 212, 0.4);
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --accent-primary: #3b82f6;
+            --accent-cyan: #22d3ee;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+            --accent-glow: rgba(34, 211, 238, 0.15);
+            
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 10px 30px -10px rgba(0,0,0,0.5);
+            --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.7);
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            transition: background-color var(--transition-smooth), color var(--transition-smooth);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button, a {
+            font-family: inherit;
+            color: inherit;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* ==========================================================================
+           3. HEADER & NAVIGATION
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .brand-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-fast);
+        }
+
+        .back-home-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .theme-toggle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        /* ==========================================================================
+           4. HERO SECTION
+           ========================================================================== */
+        .hero-section {
+            padding: 3.5rem 0 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--accent-glow);
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           5. CATEGORY STICKY BAR
+           ========================================================================== */
+        .category-nav-wrapper {
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+            background: var(--bg-base);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+        }
+
+        .category-scroll-container {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-bottom: 2px;
+        }
+
+        .category-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-btn {
+            white-space: nowrap;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+            flex-shrink: 0;
+        }
+
+        .cat-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+        }
+
+        .cat-btn.active {
+            background: var(--accent-gradient);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+
+        /* ==========================================================================
+           6. FEATURED SLIDER SECTION
+           ========================================================================== */
+        .featured-section {
+            margin-bottom: 4rem;
+        }
+
+        .featured-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        @media (min-width: 900px) {
+            .featured-card {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .slider-viewport {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: var(--transition-fast);
+        }
+
+        .slider-arrow:hover {
+            background: var(--accent-primary);
+        }
+
+        .slider-arrow.prev { left: 1rem; }
+        .slider-arrow.next { right: 1rem; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 5;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.4);
+            transition: var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #fff;
+            width: 24px;
+        }
+
+        .featured-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .featured-btn {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: var(--radius-full);
+            box-shadow: 0 4px 14px var(--accent-glow);
+            transition: var(--transition-fast);
+        }
+
+        .featured-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           7. GALLERY GRID & SECTION HEADERS
+           ========================================================================== */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            color: var(--accent-cyan);
+            font-size: 1.25rem;
+        }
+
+        .view-all-btn {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: var(--transition-fast);
+        }
+
+        .view-all-btn:hover {
+            color: var(--accent-cyan);
+            transform: translateX(3px);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* CARD STYLES */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image-wrap {
+            position: relative;
+            width: 100%;
+            background: #00000010;
+            overflow: hidden;
+        }
+
+        .ratio-poster { aspect-ratio: 4 / 5; }
+        .ratio-banner { aspect-ratio: 16 / 9; }
+        .ratio-thumbnail { aspect-ratio: 16 / 9; }
+        .ratio-promo { aspect-ratio: 1 / 1; }
+        .ratio-photo { aspect-ratio: 3 / 2; }
+
+        .card-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .card-image-wrap.contain-img img {
+            object-fit: contain;
+            background: #000;
+        }
+
+        .project-card:hover .card-image-wrap img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* BACK TO SHOWCASE BAR */
+        .single-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-to-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: var(--radius-full);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .back-to-all-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* ==========================================================================
+           8. LIGHTBOX MODAL
+           ========================================================================== */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-fast);
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-container {
+            max-width: 1000px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .lightbox-img-wrap {
+            max-height: 75vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .lightbox-img-wrap img {
+            max-height: 75vh;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: #fff;
+        }
+
+        .lightbox-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .lightbox-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition-fast);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ==========================================================================
+           9. CONTACT & FOOTER SECTION
+           ========================================================================== */
+        .contact-section {
+            margin-top: 6rem;
+            padding: 4rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+            width: 100%;
+        }
+
+        @media (min-width: 480px) {
+            .btn-contact {
+                width: auto;
+            }
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+        }
+
+        .btn-email {
+            background: var(--accent-gradient);
+            color: #ffffff;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+
+        .btn-email:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        .social-links-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-link {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            transition: var(--transition-fast);
+        }
+
+        .social-icon-link:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        .footer-credits {
+            text-align: center;
+            padding: 2.5rem 0 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* ==========================================================================
+           10. MOBILE ADAPTATIONS & FIXES
+           ========================================================================== */
+        @media (max-width: 640px) {
+            .hero-section {
+                padding: 2rem 0 1.5rem;
+            }
+
+            .category-nav-wrapper {
+                top: 60px;
+                padding: 0.75rem 0;
+            }
+
+            .nav-wrapper {
+                height: 60px;
+            }
+
+            .featured-content {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .slider-viewport {
+                aspect-ratio: 16 / 11;
+            }
+
+            .contact-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .lightbox-close {
+                top: -40px;
+                right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo">TUHIN DAS</a>
+                
+                <div class="nav-actions">
+                    <a href="index.html" class="back-home-btn" aria-label="Return to homepage">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Portfolio</span>
+                    </a>
+                    
+                    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+    <section class="hero-section">
+        <div class="container">
+            <span class="hero-tag">Creative Showcase</span>
+            <h1 class="hero-title">MY PROJECTS</h1>
+            <p class="hero-subtitle">
+                A curated collection of my creative work, design projects, promotional content, and visual storytelling.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       STICKY CATEGORY BAR
+       ========================================================================== -->
+    <div class="category-nav-wrapper">
+        <div class="container">
+            <nav class="category-scroll-container" id="categoryNav">
+                <button class="cat-btn active" data-category="all">All Showcase</button>
+                <button class="cat-btn" data-category="posters">Posters</button>
+                <button class="cat-btn" data-category="banners">Banners</button>
+                <button class="cat-btn" data-category="thumbnails">YouTube Thumbnails</button>
+                <button class="cat-btn" data-category="promotions">Promotions</button>
+                <button class="cat-btn" data-category="photography">Photography</button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container">
+
+        <!-- ==========================================================================
+           FEATURED PROJECT SLIDER (ONLY VISIBLE IN 'ALL' VIEW)
+           ========================================================================== -->
+        <section class="featured-section" id="featuredSection">
+            <div class="featured-card">
+                <div class="slider-viewport" id="sliderViewport">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Dynamic Featured Slides Populated via JS -->
+                    </div>
+                    <button class="slider-arrow prev" id="sliderPrev" aria-label="Previous Slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-arrow next" id="sliderNext" aria-label="Next Slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                </div>
+                
+                <div class="featured-content">
+                    <span class="featured-label">Featured Spotlight</span>
+                    <h2 class="featured-title" id="featuredTitle">Loading Spotlight...</h2>
+                    <p class="featured-desc" id="featuredDesc">Explore high-priority design highlights and featured campaigns.</p>
+                    <button class="featured-btn" id="featuredViewBtn">
+                        <span>View Details</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           DYNAMIC GALLERY CONTAINER
+           ========================================================================== -->
+        <div id="galleryContainer"></div>
+
+        <!-- ==========================================================================
+           LET'S WORK TOGETHER / CONTACT SECTION
+           ========================================================================== -->
+        <section class="contact-section">
+            <h2 class="contact-title">LET'S WORK TOGETHER</h2>
+            <p class="contact-subtitle">Have a project in mind? Let's create something extraordinary together.</p>
+            
+            <div class="contact-actions">
+                <a href="#" id="whatsappBtn" target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Me</span>
+                </a>
+                <a href="#" id="emailBtn" class="btn-contact btn-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email Me</span>
+                </a>
+            </div>
+
+            <div class="social-links-grid" id="socialLinksGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-credits">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Tuhin Das. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       LIGHTBOX MODAL
+       ========================================================================== -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="" alt="Project Preview">
+            </div>
+            <div class="lightbox-caption">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-desc" id="lightboxDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       JAVASCRIPT LOGIC & DATA CONFIGURATION
+       ========================================================================== -->
+    <script>
+        /* ==========================================================================
+           01. CONFIGURATION & PERSONAL DETAILS (EASY EDIT SECTION)
+           ========================================================================== */
+        const CONFIG = {
+            whatsappNumber: "919000000000",
+            emailAddress: "tuhindas@example.com",
+            
+            socialLinks: {
+                instagram: "https://instagram.com/yourhandle",
+                youtube: "https://youtube.com/@yourchannel",
+                facebook: "https://facebook.com/yourprofile",
+                linkedin: "https://linkedin.com/in/yourprofile"
+            }
+        };
+
+        /* ==========================================================================
+           02. FEATURED PROJECTS DATA (SLIDER)
+           ========================================================================== */
+        const featuredProjects = [
+            {
+                id: "feat-1",
+                image: "assets/featured-01.jpg",
+                title: "Cinematic Event Poster Series",
+                description: "A complete visual identity and artwork design created for major promotional events and digital showcases."
+            },
+            {
+                id: "feat-2",
+                image: "assets/featured-02.jpg",
+                title: "Brand Campaign Banners",
+                description: "Modern promotional landscape designs tailored for high-converting social media marketing campaigns."
+            },
+            {
+                id: "feat-3",
+                image: "assets/featured-03.jpg",
+                title: "YouTube Visual Branding",
+                description: "High-CTR, vibrant YouTube thumbnail designs focused on maximizing audience engagement and clarity."
+            },
+            {
+                id: "feat-4",
+                image: "assets/featured-04.jpg",
+                title: "Creative Commercial Photography",
+                description: "A blend of moody lighting and crisp framing capturing authentic moments and premium products."
+            }
+        ];
+
+        /* ==========================================================================
+           03. CATEGORY PROJECTS DATABASE
+           ========================================================================== */
+        const projectsData = {
+            posters: [
+                { id: "p1", image: "assets/poster-01.jpg", title: "Music Festival Poster", description: "Vibrant neon-themed artwork for live event", ratio: "ratio-poster", contain: false },
+                { id: "p2", image: "assets/poster-02.jpg", title: "Minimalist Movie Design", description: "Clean typographic cinema poster", ratio: "ratio-poster", contain: false },
+                { id: "p3", image: "assets/poster-03.jpg", title: "Sports Tournament Graphic", description: "High-energy graphic with dynamic composition", ratio: "ratio-poster", contain: false },
+                { id: "p4", image: "assets/poster-04.jpg", title: "Cyberpunk Art Poster", description: "Futuristic digital art illustration", ratio: "ratio-poster", contain: false },
+                { id: "p5", image: "assets/poster-05.jpg", title: "Creative Exhibition Concept", description: "Modern editorial design format", ratio: "ratio-poster", contain: false }
+            ],
+            banners: [
+                { id: "b1", image: "assets/banner-01.jpg", title: "E-Commerce Sale Banner", description: "High-impact promotional web banner", ratio: "ratio-banner", contain: false },
+                { id: "b2", image: "assets/banner-02.jpg", title: "Tech Conference Header", description: "Clean corporate web header graphic", ratio: "ratio-banner", contain: false },
+                { id: "b3", image: "assets/banner-03.jpg", title: "Gaming Channel Art", description: "Action-packed social media landscape banner", ratio: "ratio-banner", contain: false }
+            ],
+            thumbnails: [
+                { id: "t1", image: "assets/thumbnail-01.jpg", title: "Tech Review Thumbnail", description: "High contrast artwork optimized for CTR", ratio: "ratio-thumbnail", contain: false },
+                { id: "t2", image: "assets/thumbnail-02.jpg", title: "Travel Vlog Cover", description: "Vibrant color graded thumbnail layout", ratio: "ratio-thumbnail", contain: false },
+                { id: "t3", image: "assets/thumbnail-03.jpg", title: "Podcast Episode Cover", description: "Bold typography and expression focal point", ratio: "ratio-thumbnail", contain: false }
+            ],
+            promotions: [
+                { id: "pr1", image: "assets/promotion-01.jpg", title: "Social Media Promo Pack", description: "Square format promotional Instagram post", ratio: "ratio-promo", contain: false },
+                { id: "pr2", image: "assets/promotion-02.jpg", title: "Product Launch Visual", description: "Clean gradient background with crisp details", ratio: "ratio-promo", contain: false },
+                { id: "pr3", image: "assets/promotion-03.jpg", title: "Discount Campaign Graphic", description: "Bold promotional callout design", ratio: "ratio-promo", contain: false }
+            ],
+            photography: [
+                { id: "ph1", image: "assets/photo-01.jpg", title: "Urban Architecture", description: "Geometric composition in natural city light", ratio: "ratio-photo", contain: false },
+                { id: "ph2", image: "assets/photo-02.jpg", title: "Moody Portraiture", description: "Dramatic lighting and expressive portrait", ratio: "ratio-photo", contain: false },
+                { id: "ph3", image: "assets/photo-03.jpg", title: "Cinematic Street Shot", description: "Candid night street scene with rich tones", ratio: "ratio-photo", contain: false }
+            ]
+        };
+
+        const categoryMeta = {
+            posters: { name: "Posters", icon: "fa-solid fa-file-image" },
+            banners: { name: "Banners", icon: "fa-solid fa-panorama" },
+            thumbnails: { name: "YouTube Thumbnails", icon: "fa-solid fa-play" },
+            promotions: { name: "Promotions", icon: "fa-solid fa-bullhorn" },
+            photography: { name: "Photography", icon: "fa-solid fa-camera" }
+        };
+
+        /* ==========================================================================
+           04. STATE MANAGEMENT
+           ========================================================================== */
+        let activeCategory = "all";
+        let currentSlide = 0;
+
+        /* ==========================================================================
+           05. DOM ELEMENTS
+           ========================================================================== */
+        const galleryContainer = document.getElementById("galleryContainer");
+        const featuredSection = document.getElementById("featuredSection");
+        const categoryNavButtons = document.querySelectorAll(".cat-btn");
+        
+        const sliderTrack = document.getElementById("sliderTrack");
+        const sliderDots = document.getElementById("sliderDots");
+        const sliderViewport = document.getElementById("sliderViewport");
+        const featuredTitle = document.getElementById("featuredTitle");
+        const featuredDesc = document.getElementById("featuredDesc");
+        const featuredViewBtn = document.getElementById("featuredViewBtn");
+
+        const lightboxModal = document.getElementById("lightboxModal");
+        const lightboxImg = document.getElementById("lightboxImg");
+        const lightboxTitle = document.getElementById("lightboxTitle");
+        const lightboxDesc = document.getElementById("lightboxDesc");
+        const lightboxClose = document.getElementById("lightboxClose");
+
+        /* ==========================================================================
+           06. INITIALIZATION
+           ========================================================================== */
+        document.addEventListener("DOMContentLoaded", () => {
+            initTheme();
+            initContactSection();
+            initSlider();
+            renderView();
+            document.getElementById("year").textContent = new Date().getFullYear();
+        });
+
+        /* ==========================================================================
+           07. THEME TOGGLE LOGIC
+           ========================================================================== */
+        function initTheme() {
+            const themeToggleBtn = document.getElementById("themeToggle");
+            const savedTheme = localStorage.getItem("theme");
+            
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+            
+            updateThemeIcon();
+
+            themeToggleBtn.addEventListener("click", () => {
+                const current = document.documentElement.getAttribute("data-theme");
+                const target = current === "light" ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", target);
+                localStorage.setItem("theme", target);
+                updateThemeIcon();
+            });
+        }
+
+        function updateThemeIcon() {
+            const current = document.documentElement.getAttribute("data-theme");
+            const themeToggleBtn = document.getElementById("themeToggle");
+            themeToggleBtn.innerHTML = current === "light" 
+                ? '<i class="fa-solid fa-moon"></i>' 
+                : '<i class="fa-solid fa-sun"></i>';
+        }
+
+        /* ==========================================================================
+           08. CONTACT & SOCIALS INITIALIZATION
+           ========================================================================== */
+        function initContactSection() {
+            const whatsappBtn = document.getElementById("whatsappBtn");
+            const emailBtn = document.getElementById("emailBtn");
+            const socialLinksGrid = document.getElementById("socialLinksGrid");
+
+            whatsappBtn.href = `https://wa.me/${CONFIG.whatsappNumber}`;
+            emailBtn.href = `mailto:${CONFIG.emailAddress}`;
+
+            const socials = [
+                { link: CONFIG.socialLinks.instagram, icon: "fa-brands fa-instagram", name: "Instagram" },
+                { link: CONFIG.socialLinks.youtube, icon: "fa-brands fa-youtube", name: "YouTube" },
+                { link: CONFIG.socialLinks.facebook, icon: "fa-brands fa-facebook-f", name: "Facebook" },
+                { link: CONFIG.socialLinks.linkedin, icon: "fa-brands fa-linkedin-in", name: "LinkedIn" }
+            ];
+
+            socialLinksGrid.innerHTML = socials.map(s => `
+                <a href="${s.link}" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="${s.name}">
+                    <i class="${s.icon}"></i>
+                </a>
+            `).join('');
+        }
+
+        /* ==========================================================================
+           09. MANUAL FEATURED SLIDER LOGIC (NO AUTOMATIC SLIDING)
+           ========================================================================== */
+        function initSlider() {
+            sliderTrack.innerHTML = featuredProjects.map((p, idx) => `
+                <div class="slide">
+                    <img src="${p.image}" alt="${p.title}" ${idx === 0 ? '' : 'loading="lazy"'} onerror="handleImageError(this, '${p.title}')">
+                </div>
+            `).join('');
+
+            sliderDots.innerHTML = featuredProjects.map((_, idx) => `
+                <div class="dot ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${idx})"></div>
+            `).join('');
+
+            updateSlideContent(0);
+
+            document.getElementById("sliderPrev").addEventListener("click", prevSlide);
+            document.getElementById("sliderNext").addEventListener("click", nextSlide);
+
+            // Touch Swipe Support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            sliderViewport.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, {passive: true});
+            sliderViewport.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 40) nextSlide();
+                if (touchEndX > touchStartX + 40) prevSlide();
+            }
+
+            featuredViewBtn.addEventListener("click", () => {
+                const currentProj = featuredProjects[currentSlide];
+                openLightbox(currentProj.image, currentProj.title, currentProj.description);
+            });
+        }
+
+        function updateSlideContent(index) {
+            sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+            const dots = sliderDots.querySelectorAll(".dot");
+            dots.forEach((dot, idx) => dot.classList.toggle("active", idx === index));
+            
+            featuredTitle.textContent = featuredProjects[index].title;
+            featuredDesc.textContent = featuredProjects[index].description;
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlideContent(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % featuredProjects.length;
+            updateSlideContent(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + featuredProjects.length) % featuredProjects.length;
+            updateSlideContent(currentSlide);
+        }
+
+        /* ==========================================================================
+           10. RENDER GALLERY VIEWS
+           ========================================================================== */
+        categoryNavButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const cat = btn.getAttribute("data-category");
+                switchCategory(cat);
+            });
+        });
+
+        function switchCategory(cat) {
+            activeCategory = cat;
+            
+            categoryNavButtons.forEach(btn => {
+                btn.classList.toggle("active", btn.getAttribute("data-category") === cat);
+            });
+
+            renderView();
+        }
+
+        function renderView() {
+            if (activeCategory === "all") {
+                featuredSection.style.display = "block";
+                renderAllShowcase();
+            } else {
+                featuredSection.style.display = "none";
+                renderSingleCategory(activeCategory);
+            }
+        }
+
+        function renderAllShowcase() {
+            let html = "";
+
+            Object.keys(projectsData).forEach(catKey => {
+                const items = projectsData[catKey].slice(0, 2);
+                const meta = categoryMeta[catKey];
+
+                if (items.length === 0) return;
+
+                html += `
+                    <section class="category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i class="${meta.icon}"></i>
+                                <span>${meta.name}</span>
+                            </h2>
+                            <button class="view-all-btn" onclick="switchCategory('${catKey}')">
+                                <span>View All</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="gallery-grid">
+                            ${items.map(item => createCardHTML(item, meta.name)).join('')}
+                        </div>
+                    </section>
+                `;
+            });
+
+            galleryContainer.innerHTML = html;
+        }
+
+        function renderSingleCategory(catKey) {
+            const items = projectsData[catKey] || [];
+            const meta = categoryMeta[catKey];
+
+            let html = `
+                <div class="single-category-header">
+                    <button class="back-to-all-btn" onclick="switchCategory('all')">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back to All Showcase</span>
+                    </button>
+                    <h2 class="section-title" style="font-size: 1.25rem;">
+                        <i class="${meta.icon}"></i>
+                        <span>${meta.name} (${items.length})</span>
+                    </h2>
+                </div>
+            `;
+
+            if (items.length === 0) {
+                html += `<p style="text-align: center; padding: 3rem 0; color: var(--text-muted);">No projects added to this category yet.</p>`;
+            } else {
+                html += `
+                    <div class="gallery-grid">
+                        ${items.map(item => createCardHTML(item, meta.name)).join('')}
+                    </div>
+                `;
+            }
+
+            galleryContainer.innerHTML = html;
+        }
+
+        function createCardHTML(item, categoryLabel) {
+            const containClass = item.contain ? 'contain-img' : '';
+            const safeTitle = escapeQuotes(item.title);
+            const safeDesc = escapeQuotes(item.description);
+
+            return `
+                <div class="project-card" onclick="openLightbox('${item.image}', '${safeTitle}', '${safeDesc}')">
+                    <div class="card-image-wrap ${item.ratio} ${containClass}">
+                        <img src="${item.image}" alt="${safeTitle}" loading="lazy" onerror="handleImageError(this, '${safeTitle}')">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">${categoryLabel}</span>
+                        <h3 class="card-title">${item.title}</h3>
+                        <p class="card-desc">${item.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function escapeQuotes(str) {
+            return str ? str.replace(/'/g, "\\'") : '';
+        }
+
+        function handleImageError(img, title) {
+            const parent = img.parentElement;
+            img.style.display = 'none';
+            
+            const fallback = document.createElement('div');
+            fallback.style.width = '100%';
+            fallback.style.height = '100%';
+            fallback.style.display = 'flex';
+            fallback.style.alignItems = 'center';
+            fallback.style.justifyContent = 'center';
+            fallback.style.background = 'var(--bg-card)';
+            fallback.style.color = 'var(--text-muted)';
+            fallback.style.padding = '1rem';
+            fallback.style.textAlign = 'center';
+            fallback.style.fontSize = '0.85rem';
+            fallback.innerHTML = `<span><i class="fa-regular fa-image" style="font-size: 1.5rem; display:block; margin-bottom: 0.5rem;"></i>${title}</span>`;
+            
+            parent.appendChild(fallback);
+        }
+
+        /* ==========================================================================
+           11. LIGHTBOX SYSTEM
+           ========================================================================== */
+        function openLightbox(imageSrc, title, description) {
+            lightboxImg.src = imageSrc;
+            lightboxTitle.textContent = title || '';
+            lightboxDesc.textContent = description || '';
+            lightboxModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightboxModal.addEventListener("click", (e) => {
+            if (e.target === lightboxModal) closeLightbox();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && lightboxModal.classList.contains("active")) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
